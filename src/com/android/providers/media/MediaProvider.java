@@ -1721,7 +1721,7 @@ public class MediaProvider extends ContentProvider {
         }
 
         if (fromVersion < 509) {
-            db.execSQL("CREATE TABLE IF NOT EXISTS log (time DATETIME PRIMARY KEY, message TEXT);");
+            db.execSQL("CREATE TABLE IF NOT EXISTS log (time DATETIME, message TEXT);");
         }
         sanityCheck(db, fromVersion);
         long elapsedSeconds = (SystemClock.currentTimeMicro() - startTime) / 1000000;
